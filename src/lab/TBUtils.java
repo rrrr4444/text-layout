@@ -30,7 +30,7 @@ public class TBUtils {
   /**
    * Build a sequence of dashes of a specified length.
    */
-  static String dashes(int len) {
+  public static String dashes(int len) {
     // Note: This strategy probably represents an overkill in
     // attempts at efficiency.
     // Make sure the collection of dashes is big enough
@@ -59,7 +59,7 @@ public class TBUtils {
   /**
    * Build a sequence of spaces of a specified length.
    */
-  static String spaces(int len) {
+  public static String spaces(int len) {
     // As with dashes, this is probably overkill.
     // Make sure the collection of dashes is big enough
     while (lotsOfSpaces.length() < len) {
