@@ -1,24 +1,26 @@
 import lab.TBUtils;
 import lab.TextBlock;
 
-public class RightJustified implements TextBlock {
-    int width;
+public class HorizontallyFlipped implements TextBlock {
     TextBlock contents;
 
     // Constructor for the Centered class.
-    public RightJustified (TextBlock contents, int width) {
+    public HorizontallyFlipped (TextBlock contents) {
         this.contents = contents;
-        this.width = width;
-    } // Truncated()s
+    } // Truncated()
 
     public String row(int i) throws Exception {
+
+        // Sanity check
+        if ((i < 0) || (i >= this.height())) {
+            throw new Exception("Invalid row " + i);
+        } // if the row is invalid
         String row = this.contents.row(i);
-        int rowLength = row.length();
-        if (rowLength > this.width) {
-            throw new Exception("TextBlock longer than centering width");
+        String reversed_row = "";
+        for (int j = row.length() - 1; j >= 0; j--) {
+            reversed_row += row.charAt(j);
         }
-        int paddingLeft = this.width - rowLength;
-        return TBUtils.spaces(paddingLeft) + row;
+        return reversed_row;
     }
 
     public int height() {
@@ -26,14 +28,13 @@ public class RightJustified implements TextBlock {
     }
 
     public int width() {
-        return Math.max(this.contents.width(), this.width);
+        return this.contents.width();
     }
 
     public boolean eqv(TextBlock block) {
         // If classes and fields are the same, recurse down contents
         try {
-            return block.getClass() == RightJustified.class
-                    && this.width == block.width()
+            return block.getClass() == HorizontallyFlipped.class
                     && this.contents.eqv(block);
         } catch (Exception e) {
             return false;

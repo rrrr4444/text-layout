@@ -1,5 +1,6 @@
 import java.io.PrintWriter;
 
+import lab.VComposition;
 import lab.TBUtils;
 import lab.TextBlock;
 import lab.TextLine;
@@ -11,6 +12,10 @@ public class Experiments {
         truncate(pen);
         center(pen);
         rightJustify(pen);
+        horizontallyFlip(pen);
+        verticallyFLip(pen);
+        isEq(pen);
+        isEqual(pen);
     } // main()
 
     public static void truncate(PrintWriter pen) {
@@ -32,5 +37,35 @@ public class Experiments {
         TBUtils.print(pen, block);
         block = new RightJustified(block, 6);
         TBUtils.print(pen, block);
+    }
+
+    public static void horizontallyFlip(PrintWriter pen) {
+        TextBlock block = new TextLine("hello");
+        TBUtils.print(pen, block);
+        block = new HorizontallyFlipped(block);
+        TBUtils.print(pen, block);
+    }
+
+    public static void verticallyFLip(PrintWriter pen) {
+        TextBlock one = new TextLine("one");
+        TextBlock two = new TextLine("two");
+        TextBlock block = new VComposition(one, two);
+        TBUtils.print(pen, block);
+        block = new VerticallyFlipped(block);
+        TBUtils.print(pen, block);
+    }
+
+    public static void isEq(PrintWriter pen) {
+        TextBlock one = new TextLine("hi");
+        TextBlock two = new TextLine("hi");
+        pen.println(TBUtils.eq(one, two));
+        pen.println(TBUtils.eq(one, one));
+    }
+
+    public static void isEqual(PrintWriter pen) {
+        TextBlock one = new TextLine("hi");
+        TextBlock two = new TextLine("hi");
+        pen.println(TBUtils.equal(one, two));
+        pen.println(TBUtils.equal(one, one));
     }
 } // Experiments class

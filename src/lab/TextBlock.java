@@ -29,4 +29,9 @@ public interface TextBlock {
    */
   public int width();
 
+  /**
+   * Assesses structural equivalence.
+   */
+  public boolean eqv(TextBlock block);
+
 } // interface TextBlock

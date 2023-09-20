@@ -1,18 +1,19 @@
+import lab.TBUtils;
 import lab.TextBlock;
 
 public class Truncated implements TextBlock {
     int max_width;
-    TextBlock block;
+    TextBlock contents;
 
     // Constructor for the Truncated class.
-    public Truncated (TextBlock block, int max_width) {
-        this.block = block;
+    public Truncated (TextBlock contents, int max_width) {
+        this.contents = contents;
         this.max_width = max_width;
     } // Truncated()
 
     // returns height of TextBlock.
     public int height() {
-        return this.block.height();
+        return this.contents.height();
     } // height()
 
     // Returns length of truncated TextBlock.
@@ -22,11 +23,30 @@ public class Truncated implements TextBlock {
 
     // Returns row i of the TextBlock.
     public String row(int i) throws Exception {
-        if (i < 0 || i >= this.block.height()) {
+        // Sanity check
+        if ((i < 0) || (i >= this.height())) {
             throw new Exception("Invalid row " + i);
+        } // if the row is invalid
+
+        String line = this.contents.row(i);
+        int difference = this.max_width - line.length();
+        if (difference > 0) {
+            line += TBUtils.spaces(difference);
+            return line;
+        } else {
+            return line.substring(0, this.max_width);
         } // if
-        String line = this.block.row(i);
-        return line.substring(0, this.max_width);
     } // row()
+
+    public boolean eqv(TextBlock block) {
+        // If classes and fields are the same, recurse down contents
+        try {
+            return block.getClass() == Truncated.class
+                    && this.max_width == block.width()
+                    && this.contents.eqv(block);
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 } // Truncated class

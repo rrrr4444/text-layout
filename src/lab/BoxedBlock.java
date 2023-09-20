@@ -67,4 +67,14 @@ public class BoxedBlock implements TextBlock {
     return 2 + this.contents.width();
   } // width()
 
+  public boolean eqv(TextBlock block) {
+    // If classes and fields are the same, recurse down contents
+    try {
+      return block.getClass() == BoxedBlock.class
+              && this.contents.eqv(block);
+    } catch (Exception e) {
+      return false;
+    }
+  }
+
 } // class BoxedBlock

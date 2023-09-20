@@ -57,6 +57,36 @@ public class TBUtils {
   } // print(PrintWriter, TextBlock)
 
   /**
+   * Returns true if both blocks have identical rows.
+   */
+  public static Boolean equal(TextBlock block_0, TextBlock block_1) {
+    int height_0 = block_0.height();
+    int height_1 = block_1.height();
+
+    if (height_0 != height_1) {
+      return false;
+    } // if
+
+    for (int i = 0; i < height_0; i ++) {
+      try {
+        if (!block_0.row(i).equals(block_1.row(i))) {
+          return false;
+        }
+      } catch (Exception e) {
+          return false;
+      }
+    }
+    return true;
+  } // eq(TextBlock, TextBlock)
+
+  /**
+   * Returns true if both blocks share a memory location.
+   */
+  public static Boolean eq(TextBlock block_0, TextBlock block_1) {
+    return block_0 == block_1;
+  } // eq(TextBlock, TextBlock)
+
+  /**
    * Build a sequence of spaces of a specified length.
    */
   public static String spaces(int len) {

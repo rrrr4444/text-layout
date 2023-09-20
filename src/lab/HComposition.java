@@ -69,6 +69,20 @@ public class HComposition implements TextBlock {
   } // row(int)
 
   /**
+   * Returns left TextBlock.
+   */
+  public TextBlock left() {
+    return left;
+  } // height()
+
+  /**
+   * Returns right TextBlock.
+   */
+  public TextBlock right() {
+    return right;
+  } // height()
+
+  /**
    * Determine how many rows are in the block.
    */
   public int height() {
@@ -85,5 +99,16 @@ public class HComposition implements TextBlock {
     // width of the right.
     return this.left.width() + this.right.width();
   } // width()
+
+  public boolean eqv(TextBlock block) {
+    // If classes and fields are the same, recurse down contents
+    try {
+      return block.getClass() == HComposition.class
+              && this.left.eqv(((HComposition) block).left())
+              && this.right.eqv(((HComposition) block).right());
+    } catch (Exception e) {
+        return false;
+    }
+  }
 
 } // class HComposition

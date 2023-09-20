@@ -70,6 +70,20 @@ public class VComposition implements TextBlock {
   } // row(int)
 
   /**
+   * Returns left TextBlock.
+   */
+  public TextBlock top() {
+    return top;
+  } // top()
+
+  /**
+   * Returns right TextBlock.
+   */
+  public TextBlock bottom() {
+    return bottom;
+  } // bottom()
+
+  /**
    * Determine how many rows are in the block.
    */
   public int height() {
@@ -87,4 +101,14 @@ public class VComposition implements TextBlock {
     return Math.max(this.top.width(), this.bottom.width());
   } // width()
 
+  public boolean eqv(TextBlock block) {
+    // If classes and fields are the same, recurse down contents
+    try {
+      return block.getClass() == VComposition.class
+              && this.top.eqv(((VComposition) block).top())
+              && this.bottom.eqv(((VComposition) block).bottom());
+    } catch (Exception e) {
+      return false;
+    }
+  }
 } // class VComposition

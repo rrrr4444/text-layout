@@ -58,4 +58,14 @@ public class TextLine implements TextBlock {
     return this.line.length();
   } // width()
 
+  public boolean eqv(TextBlock block) {
+    // If classes and fields are the same, recurse down contents
+    try {
+      return block.getClass() == TextLine.class
+              && this.line.equals(block.row(0));
+    } catch (Exception e) {
+        return false;
+    }
+  }
+
 } // class TextLine
