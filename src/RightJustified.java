@@ -27,7 +27,10 @@ public class RightJustified implements TextBlock {
         String row = this.contents.row(i);
         int rowLength = row.length();
         int paddingLeft = this.width - rowLength;
-        return TBUtils.spaces(paddingLeft) + row.substring(0, this.width);
+        if (paddingLeft < 0) {
+            return row.substring(0, this.width);
+        }
+        return TBUtils.spaces(paddingLeft) + row;
     }
 
     /**

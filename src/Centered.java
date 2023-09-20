@@ -34,6 +34,9 @@ public class Centered implements TextBlock {
         String row = this.contents.row(i);
         int rowLength = row.length();
         int padding = this.width - rowLength;
+        if (padding < 0) {
+            return row.substring(0, this.width);
+        }
         int paddingLeft = 0;
         int paddingRight = 0;
         // If odd number of spaces, move one to the right
@@ -44,7 +47,7 @@ public class Centered implements TextBlock {
         paddingLeft += padding / 2;
         paddingRight += padding / 2;
         return TBUtils.spaces(paddingLeft) +
-                row.substring(0, this.width) +
+                row +
                 TBUtils.spaces(paddingRight);
     }
 

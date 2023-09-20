@@ -9,15 +9,8 @@ import lab.TextLine;
 public class Experiments {
     public static void main(String[] args) {
         PrintWriter pen = new PrintWriter(System.out, true);
-        truncate(pen);
         center(pen);
         rightJustify(pen);
-        horizontallyFlip(pen);
-        verticallyFLip(pen);
-        isEq(pen);
-        isEqual(pen);
-        toDashes(pen);
-        isEqv(pen);
     } // main()
 
     public static void truncate(PrintWriter pen) {
@@ -30,14 +23,14 @@ public class Experiments {
     public static void center(PrintWriter pen) {
         TextBlock block = new TextLine("hello");
         TBUtils.print(pen, block);
-        block = new Centered(block, 30);
+        block = new Centered(block, 3);
         TBUtils.print(pen, block);
     }
 
     public static void rightJustify(PrintWriter pen) {
         TextBlock block = new TextLine("hello");
         TBUtils.print(pen, block);
-        block = new RightJustified(block, 6);
+        block = new RightJustified(block, 3);
         TBUtils.print(pen, block);
     }
 
