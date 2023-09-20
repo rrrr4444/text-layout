@@ -21,9 +21,6 @@ public class Centered implements TextBlock {
 
         String row = this.contents.row(i);
         int rowLength = row.length();
-        if (rowLength > this.width) {
-            throw new Exception("TextBlock longer than centering width");
-        }
         int padding = this.width - rowLength;
         int paddingLeft = 0;
         int paddingRight = 0;
@@ -34,7 +31,9 @@ public class Centered implements TextBlock {
         }
         paddingLeft += padding / 2;
         paddingRight += padding / 2;
-        return TBUtils.spaces(paddingLeft) + row + TBUtils.spaces(paddingRight);
+        return TBUtils.spaces(paddingLeft) +
+                row.substring(0, this.width) +
+                TBUtils.spaces(paddingRight);
     }
 
     public TextBlock contents() {

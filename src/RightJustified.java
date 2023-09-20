@@ -14,11 +14,8 @@ public class RightJustified implements TextBlock {
     public String row(int i) throws Exception {
         String row = this.contents.row(i);
         int rowLength = row.length();
-        if (rowLength > this.width) {
-            throw new Exception("TextBlock longer than centering width");
-        }
         int paddingLeft = this.width - rowLength;
-        return TBUtils.spaces(paddingLeft) + row;
+        return TBUtils.spaces(paddingLeft) + row.substring(0, this.width);
     }
 
     public TextBlock contents() {
