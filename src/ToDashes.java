@@ -1,14 +1,26 @@
 import lab.TBUtils;
 import lab.TextBlock;
 
+/**
+ * Converts all characters in the TextBlock to dashes.
+ * @author Reed Colloton
+ */
 public class ToDashes implements TextBlock {
     TextBlock contents;
 
-    // Constructor for the Centered class.
+    /**
+     * Constructor for the ToDashes class.
+     */
     public ToDashes(TextBlock contents) {
         this.contents = contents;
     } // ToSpaces()
 
+    /**
+     * Get one row from the block.
+     *
+     * @pre 0 <= i < this.height()
+     * @exception Exception if the precondition is not met
+     */
     public String row(int i) throws Exception {
 
         // Sanity check
@@ -21,18 +33,31 @@ public class ToDashes implements TextBlock {
         return TBUtils.dashes(length);
     }
 
+    /**
+     * Returns this.contents
+     */
     public TextBlock contents() {
         return this.contents;
     }
 
+    /**
+     * Returns this.height
+     */
     public int height() {
         return this.contents.height();
     }
 
+    /**
+     * Returns this.width
+     */
     public int width() {
         return this.contents.width();
     }
 
+    /**
+     * Returns true if TextBlocks have the same structure of Classes.
+     * (This also means they output the same lines.)
+     */
     public boolean eqv(TextBlock block) {
         // If classes and fields are the same, recurse down contents
         try {

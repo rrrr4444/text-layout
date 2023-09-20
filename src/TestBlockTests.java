@@ -1,6 +1,7 @@
 public class TestBlockTests {
-    // TODO: Add comments to methods
-    // TODO: Check bracket and method comments for copy-paste
-    // TODO: Make sure eqv classes are correct for comparator
+    // Done: Add comments to methods
+    // Done: Check bracket and method comments for copy-paste
+    // Done: Make sure eqv classes are correct for comparator
+    // Done: Add javadocs
     // TODO: Add tests
 }
