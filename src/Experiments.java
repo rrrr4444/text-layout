@@ -16,6 +16,8 @@ public class Experiments {
         verticallyFLip(pen);
         isEq(pen);
         isEqual(pen);
+        toDashes(pen);
+        isEqv(pen);
     } // main()
 
     public static void truncate(PrintWriter pen) {
@@ -67,5 +69,20 @@ public class Experiments {
         TextBlock two = new TextLine("hi");
         pen.println(TBUtils.equal(one, two));
         pen.println(TBUtils.equal(one, one));
+    }
+
+    public static void toDashes(PrintWriter pen) {
+        TextBlock block = new TextLine("dashes");
+        TBUtils.print(pen, block);
+        block = new ToDashes(block);
+        TBUtils.print(pen, block);
+    }
+
+    public static void isEqv(PrintWriter pen) {
+        TextBlock block_0 = new TextLine("base");
+        TextBlock block_a = new TextLine("test");
+        TextBlock block_1 = new VComposition(block_0, block_0);
+        TextBlock block_2 = new VComposition(block_0, block_a);
+        pen.println(block_1.eqv(block_2));
     }
 } // Experiments class

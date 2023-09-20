@@ -19,6 +19,10 @@ public class VerticallyFlipped implements TextBlock {
         return this.contents.row((h - 1) - i);
     }
 
+    public TextBlock contents() {
+        return this.contents;
+    }
+
     public int height() {
         return this.contents.height();
     }
@@ -31,7 +35,7 @@ public class VerticallyFlipped implements TextBlock {
         // If classes and fields are the same, recurse down contents
         try {
             return block.getClass() == VerticallyFlipped.class
-                    && this.contents.eqv(block);
+                    && this.contents.eqv(((VerticallyFlipped) block).contents());
         } catch (Exception e) {
             return false;
         }

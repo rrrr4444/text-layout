@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5779bd41-5e1a-468a-b426-7658964f5e33" name="Changes" comment="maybe close to done?">
+    <list default="true" id="5779bd41-5e1a-468a-b426-7658964f5e33" name="Changes" comment="ToDashes and eqv might be fixed">
+      <change afterPath="$PROJECT_DIR$/src/ToDashes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Centered.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Centered.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HorizontallyFlipped.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HorizontallyFlipped.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab/TextBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab/TextBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RightJustified.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RightJustified.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestBlockTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestBlockTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Truncated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Truncated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VerticallyFlipped.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerticallyFlipped.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/BoxedBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab/BoxedBlock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +94,7 @@
       <workItem from="1695063563823" duration="3549000" />
       <workItem from="1695145122501" duration="535000" />
       <workItem from="1695145676887" duration="54000" />
-      <workItem from="1695163468510" duration="3734000" />
+      <workItem from="1695163468510" duration="4817000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -128,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695168155729</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="maybe close to done?">
+      <option name="closed" value="true" />
+      <created>1695168227050</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695168227050</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +167,7 @@
     <MESSAGE value="truncated" />
     <MESSAGE value="RightJustified" />
     <MESSAGE value="maybe close to done?" />
-    <option name="LAST_COMMIT_MESSAGE" value="maybe close to done?" />
+    <MESSAGE value="ToDashes and eqv might be fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="ToDashes and eqv might be fixed" />
   </component>
 </project>

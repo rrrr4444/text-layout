@@ -11,6 +11,10 @@ public class Truncated implements TextBlock {
         this.max_width = max_width;
     } // Truncated()
 
+    public TextBlock contents() {
+        return this.contents;
+    }
+
     // returns height of TextBlock.
     public int height() {
         return this.contents.height();
@@ -43,7 +47,7 @@ public class Truncated implements TextBlock {
         try {
             return block.getClass() == Truncated.class
                     && this.max_width == block.width()
-                    && this.contents.eqv(block);
+                    && this.contents.eqv(((Truncated) block).contents());
         } catch (Exception e) {
             return false;
         }

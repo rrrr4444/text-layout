@@ -21,6 +21,10 @@ public class RightJustified implements TextBlock {
         return TBUtils.spaces(paddingLeft) + row;
     }
 
+    public TextBlock contents() {
+        return this.contents;
+    }
+
     public int height() {
         return this.contents.height();
     }
@@ -34,7 +38,7 @@ public class RightJustified implements TextBlock {
         try {
             return block.getClass() == RightJustified.class
                     && this.width == block.width()
-                    && this.contents.eqv(block);
+                    && this.contents.eqv(((RightJustified) block).contents());
         } catch (Exception e) {
             return false;
         }

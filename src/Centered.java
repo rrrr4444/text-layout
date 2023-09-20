@@ -37,6 +37,10 @@ public class Centered implements TextBlock {
         return TBUtils.spaces(paddingLeft) + row + TBUtils.spaces(paddingRight);
     }
 
+    public TextBlock contents() {
+        return this.contents;
+    }
+
     public int height() {
         return this.contents.height();
     }
@@ -50,7 +54,7 @@ public class Centered implements TextBlock {
         try {
             return block.getClass() == Centered.class
                     && this.width == block.width()
-                    && this.contents.eqv(block);
+                    && this.contents.eqv(((Centered) block).contents());
         } catch (Exception e) {
             return false;
         }

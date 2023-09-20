@@ -53,6 +53,10 @@ public class BoxedBlock implements TextBlock {
     }
   } // row(int)
 
+  public TextBlock contents() {
+    return this.contents;
+  }
+
   /**
    * Determine how many rows are in the block.
    */
@@ -71,7 +75,7 @@ public class BoxedBlock implements TextBlock {
     // If classes and fields are the same, recurse down contents
     try {
       return block.getClass() == BoxedBlock.class
-              && this.contents.eqv(block);
+              && this.contents.eqv(((BoxedBlock) block).contents());
     } catch (Exception e) {
       return false;
     }

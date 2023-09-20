@@ -1,12 +1,13 @@
+import lab.TBUtils;
 import lab.TextBlock;
 
-public class HorizontallyFlipped implements TextBlock {
+public class ToDashes implements TextBlock {
     TextBlock contents;
 
     // Constructor for the Centered class.
-    public HorizontallyFlipped (TextBlock contents) {
+    public ToDashes(TextBlock contents) {
         this.contents = contents;
-    } // Truncated()
+    } // ToSpaces()
 
     public String row(int i) throws Exception {
 
@@ -14,12 +15,10 @@ public class HorizontallyFlipped implements TextBlock {
         if ((i < 0) || (i >= this.height())) {
             throw new Exception("Invalid row " + i);
         } // if the row is invalid
-        String row = this.contents.row(i);
-        String reversed_row = "";
-        for (int j = row.length() - 1; j >= 0; j--) {
-            reversed_row += row.charAt(j);
-        }
-        return reversed_row;
+
+        // Return same number of spaces as length
+        int length = this.contents.row(i).length();
+        return TBUtils.dashes(length);
     }
 
     public TextBlock contents() {
@@ -37,8 +36,8 @@ public class HorizontallyFlipped implements TextBlock {
     public boolean eqv(TextBlock block) {
         // If classes and fields are the same, recurse down contents
         try {
-            return block.getClass() == HorizontallyFlipped.class
-                    && this.contents.eqv(((HorizontallyFlipped) block).contents());
+            return block.getClass() == ToDashes.class
+                    && this.contents.eqv(((ToDashes) block).contents());
         } catch (Exception e) {
             return false;
         }
