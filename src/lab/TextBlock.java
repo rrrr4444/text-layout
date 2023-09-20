@@ -17,21 +17,21 @@ public interface TextBlock {
    * @pre i < this.height()
    * @exception Exception if the row number is invalid.
    */
-  public String row(int i) throws Exception;
+  String row(int i) throws Exception;
 
   /**
    * Determine how many rows are in the block.
    */
-  public int height();
+  int height();
 
   /**
    * Determine how many columns are in the block.
    */
-  public int width();
+  int width();
 
   /**
    * Assesses structural equivalence.
    */
-  public boolean eqv(TextBlock block);
+  boolean eqv(TextBlock block);
 
 } // interface TextBlock

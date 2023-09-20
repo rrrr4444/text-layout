@@ -1,4 +1,3 @@
-import lab.TBUtils;
 import lab.TextBlock;
 
 public class HorizontallyFlipped implements TextBlock {
