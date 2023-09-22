@@ -77,6 +77,9 @@ public class TBUtils {
    * Returns true if both blocks have identical rows.
    */
   public static Boolean equal(TextBlock block_0, TextBlock block_1) {
+    if (block_0 == null || block_1 == null){
+      return false;
+    }
     int height_0 = block_0.height();
     int height_1 = block_1.height();
 
