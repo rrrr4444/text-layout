@@ -1,5 +1,4 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import lab.*;
 import org.junit.jupiter.api.Test;
@@ -110,23 +109,38 @@ public class TestBlockTests {
                 TBUtils.toString(new VerticallyFlipped(new VComposition(new TextLine("b"), new TextLine("a")))));
     } // verticallyFlippedTests()
 
+
+    /**
+     * Tests for the equal comparator.
+     */
+    @Test
+    void equalTests() {
+    } // equalTests()
+
+    /**
+     * Tests for the eqv comparator.
+     */
+    @Test
+    void eqvTests() {
+    } // eqvTests()
+
     /**
      * Tests for the eq comparator.
      */
     @Test
     void eqTests() {
-        assertEquals("hello",
-                TBUtils.toString(new VerticallyFlipped(new TextLine("hello"))));
-        assertEquals(TBUtils.toString(new BoxedBlock(new TextLine("hello"))),
-                TBUtils.toString(new VerticallyFlipped(new BoxedBlock( new TextLine("hello")))));
-        assertEquals(TBUtils.toString(new VComposition(new TextLine("a"), new TextLine("b"))),
-                TBUtils.toString(new VerticallyFlipped(new VComposition(new TextLine("b"), new TextLine("a")))));
-    } // eqTests()
+        TextBlock hello = new TextLine("hello");
+        TextBlock emptyLine = new TextLine("");
+        TextBlock box = new BoxedBlock(hello);
 
-    /**
-     * Tests for the equals comparator.
-     */
-    @Test
-    void equalsTests() {
-    } // equalsTests()
+        assertEquals(true, TBUtils.eq(hello, hello));
+        assertEquals(true, TBUtils.eq(emptyLine, emptyLine));
+        assertEquals(true, TBUtils.eq(box, box));
+
+        assertEquals(false, TBUtils.eq(hello, box));
+        assertEquals(false, TBUtils.eq(box, emptyLine));
+        assertEquals(false, TBUtils.eq(emptyLine, hello));
+        assertEquals(false, TBUtils.eq(emptyLine, null));
+        assertEquals(false, TBUtils.eq(hello, null));
+    } // eqTests()
 }

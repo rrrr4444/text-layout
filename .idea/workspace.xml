@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5779bd41-5e1a-468a-b426-7658964f5e33" name="Changes" comment="fixed center and justify truncate">
+    <list default="true" id="5779bd41-5e1a-468a-b426-7658964f5e33" name="Changes" comment="almost done with tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestBlockTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestBlockTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab/TBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab/TBUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +117,7 @@
       <workItem from="1695163468510" duration="4842000" />
       <workItem from="1695227181590" duration="2150000" />
       <workItem from="1695229668557" duration="214000" />
-      <workItem from="1695339326454" duration="2558000" />
+      <workItem from="1695339326454" duration="2968000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -200,7 +199,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695229874339</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="toString utility">
+      <option name="closed" value="true" />
+      <created>1695342459165</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1695342459165</updated>
+    </task>
+    <task id="LOCAL-00012" summary="almost done with tests">
+      <option name="closed" value="true" />
+      <created>1695342474123</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1695342474123</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +242,8 @@
     <MESSAGE value="center and justify now truncate properly" />
     <MESSAGE value="comments" />
     <MESSAGE value="fixed center and justify truncate" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed center and justify truncate" />
+    <MESSAGE value="toString utility" />
+    <MESSAGE value="almost done with tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost done with tests" />
   </component>
 </project>
