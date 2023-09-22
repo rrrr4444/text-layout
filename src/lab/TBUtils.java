@@ -57,6 +57,23 @@ public class TBUtils {
   } // print(PrintWriter, TextBlock)
 
   /**
+   * Convert a TextBlock to a string.
+   */
+  public static String toString(TextBlock block) {
+    String str = "";
+    for (int i = 0; i < block.height(); i++) {
+      // Even though we only call block.row with a valid i,
+      // we need to put the call in a try/catch block.
+      try {
+        str += block.row(i) + '\n';
+      } catch (Exception ignored) {
+      } // catch (Exception)
+    } // for
+    // remove trailing \n
+    return str.substring(0, str.length() - 1);
+  } // toString(TextBlock)
+
+  /**
    * Returns true if both blocks have identical rows.
    */
   public static Boolean equal(TextBlock block_0, TextBlock block_1) {
