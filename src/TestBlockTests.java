@@ -115,6 +115,22 @@ public class TestBlockTests {
      */
     @Test
     void equalTests() {
+        TextBlock hello_0 = new TextLine("hello");
+        TextBlock emptyLine_0 = new TextLine("");
+        TextBlock box_0 = new BoxedBlock(hello_0);
+        TextBlock hello_1 = new TextLine("hello");
+        TextBlock emptyLine_1 = new TextLine("");
+        TextBlock box_1 = new BoxedBlock(hello_1);
+
+        assertEquals(true, TBUtils.equal(hello_0, hello_1));
+        assertEquals(true, TBUtils.equal(emptyLine_0, emptyLine_1));
+        assertEquals(true, TBUtils.equal(box_0, box_1));
+
+        assertEquals(false, TBUtils.equal(hello_0, box_1));
+        assertEquals(false, TBUtils.equal(box_0, emptyLine_1));
+        assertEquals(false, TBUtils.equal(emptyLine_0, hello_1));
+        assertEquals(false, TBUtils.equal(emptyLine_0, null));
+        assertEquals(false, TBUtils.equal(hello_1, null));
     } // equalTests()
 
     /**
@@ -122,6 +138,24 @@ public class TestBlockTests {
      */
     @Test
     void eqvTests() {
+        TextBlock hello_rev_0 = new HorizontallyFlipped((new TextLine("hello")));
+        TextBlock hello_rev_1 = new TextLine("olleh");
+        TextBlock tower_0 = new VerticallyFlipped(new VComposition(new TextLine("a"), new TextLine("b")));
+        TextBlock tower_1 = new VComposition(new TextLine("b"), new TextLine("a"));
+        TextBlock emptyLine_0 = new TextLine("");
+        TextBlock emptyLine_1 = new TextLine("");
+
+        assertEquals(false, hello_rev_0.eqv(hello_rev_1));
+        assertEquals(true, hello_rev_1.eqv(hello_rev_1));
+        assertEquals(false, tower_0.eqv(tower_1));
+        assertEquals(true, tower_1.eqv(tower_1));
+        assertEquals(true, emptyLine_0.eqv(emptyLine_1));
+
+        assertEquals(false, hello_rev_0.eqv(new Centered(hello_rev_0, 5)));
+        assertEquals(false, tower_0.eqv(hello_rev_0));
+        assertEquals(false, emptyLine_0.eqv(hello_rev_0));
+        assertEquals(false, emptyLine_0.eqv(null));
+        assertEquals(false, hello_rev_0.eqv(null));
     } // eqvTests()
 
     /**
