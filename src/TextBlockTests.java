@@ -30,6 +30,8 @@ public class TextBlockTests {
             TBUtils.toString(new Centered(new TextLine("hello"), 1)));
     assertEquals("he",
             TBUtils.toString(new Centered(new TextLine("hello"), 2)));
+    assertEquals("hello",
+            TBUtils.toString(new Centered(new Centered(new TextLine("hello"), 5), 5)));
   } // centeredTests()
 
   /**
@@ -45,6 +47,8 @@ public class TextBlockTests {
             TBUtils.toString(new HorizontallyFlipped(new BoxedBlock(new TextLine("hello")))));
     assertEquals(TBUtils.toString(new HComposition(new TextLine("a"), new TextLine("b"))),
             TBUtils.toString(new HorizontallyFlipped(new HComposition(new TextLine("b"), new TextLine("a")))));
+    assertEquals(TBUtils.toString(new HComposition(new TextLine("a"), new TextLine("b"))),
+            TBUtils.toString(new HorizontallyFlipped (new HorizontallyFlipped(new HComposition(new TextLine("a"), new TextLine("b"))))));
   } // horizontallyFlippedTests()
 
   /**
@@ -68,6 +72,8 @@ public class TextBlockTests {
             TBUtils.toString(new RightJustified(new TextLine("hello"), 1)));
     assertEquals("he",
             TBUtils.toString(new RightJustified(new TextLine("hello"), 2)));
+    assertEquals("hello",
+            TBUtils.toString(new RightJustified(new RightJustified(new TextLine("hello"), 5), 5)));
   } // rightJustifiedTests()
 
   /**
@@ -90,6 +96,8 @@ public class TextBlockTests {
     assertEquals("---------------",
             TBUtils.toString(new ToDashes(new HComposition(new TextLine("hello"),
                     new TextLine("abcdefhjij")))));
+    assertEquals("-----",
+            TBUtils.toString(new ToDashes(new ToDashes(new TextLine("hello")))));
   } // toDashesTests()
 
   /**
@@ -113,6 +121,8 @@ public class TextBlockTests {
             TBUtils.toString(new Truncated(new TextLine("hello"), 1)));
     assertEquals("he",
             TBUtils.toString(new Truncated(new TextLine("hello"), 2)));
+    assertEquals("hello",
+            TBUtils.toString(new Truncated(new Truncated(new TextLine("hello"), 5), 5)));
   } // truncatedTests()
 
   /**
@@ -130,6 +140,8 @@ public class TextBlockTests {
             TBUtils.toString(new VerticallyFlipped(new BoxedBlock(new TextLine("hello")))));
     assertEquals(TBUtils.toString(new VComposition(new TextLine("a"), new TextLine("b"))),
             TBUtils.toString(new VerticallyFlipped(new VComposition(new TextLine("b"), new TextLine("a")))));
+    assertEquals(TBUtils.toString(new BoxedBlock(new TextLine("hello"))),
+            TBUtils.toString(new VerticallyFlipped(new VerticallyFlipped(new BoxedBlock(new TextLine("hello"))))));
   } // verticallyFlippedTests()
 
 
