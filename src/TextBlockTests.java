@@ -168,17 +168,17 @@ public class TextBlockTests {
     TextBlock emptyLine_0 = new TextLine("");
     TextBlock emptyLine_1 = new TextLine("");
 
-    assertEquals(false, hello_rev_0.eqv(hello_rev_1));
-    assertEquals(true, hello_rev_1.eqv(hello_rev_1));
-    assertEquals(false, tower_0.eqv(tower_1));
-    assertEquals(true, tower_1.eqv(tower_1));
-    assertEquals(true, emptyLine_0.eqv(emptyLine_1));
+    assertEquals(false, TBUtils.eqv(hello_rev_0, hello_rev_1));
+    assertEquals(true, TBUtils.eqv(hello_rev_1, hello_rev_1));
+    assertEquals(false, TBUtils.eqv(tower_0, tower_1));
+    assertEquals(true, TBUtils.eqv(tower_1, tower_1));
+    assertEquals(true, TBUtils.eqv(emptyLine_0, emptyLine_1));
 
-    assertEquals(false, hello_rev_0.eqv(new Centered(hello_rev_0, 5)));
-    assertEquals(false, tower_0.eqv(hello_rev_0));
-    assertEquals(false, emptyLine_0.eqv(hello_rev_0));
-    assertEquals(false, emptyLine_0.eqv(null));
-    assertEquals(false, hello_rev_0.eqv(null));
+    assertEquals(false, TBUtils.eqv(hello_rev_0, new Centered(hello_rev_0, 5)));
+    assertEquals(false, TBUtils.eqv(tower_0, hello_rev_0));
+    assertEquals(false, TBUtils.eqv(emptyLine_0, hello_rev_0));
+    assertEquals(false, TBUtils.eqv(emptyLine_0, null));
+    assertEquals(false, TBUtils.eqv(hello_rev_0, null));
   } // eqvTests()
 
   /**
