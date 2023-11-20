@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 
 /**
  * Utilities for TextBlocks.
- * 
+ *
  * @author Samuel A. Rebelsky
  * @version 1.3 of September 2014
  */
@@ -77,7 +77,7 @@ public class TBUtils {
    * Returns true if both blocks have identical rows.
    */
   public static Boolean equal(TextBlock block_0, TextBlock block_1) {
-    if (block_0 == null || block_1 == null){
+    if (block_0 == null || block_1 == null) {
       return false;
     }
     int height_0 = block_0.height();
@@ -87,13 +87,13 @@ public class TBUtils {
       return false;
     } // if
 
-    for (int i = 0; i < height_0; i ++) {
+    for (int i = 0; i < height_0; i++) {
       try {
         if (!block_0.row(i).equals(block_1.row(i))) {
           return false;
         }
       } catch (Exception e) {
-          return false;
+        return false;
       }
     }
     return true;
@@ -104,6 +104,13 @@ public class TBUtils {
    */
   public static Boolean eq(TextBlock block_0, TextBlock block_1) {
     return block_0 == block_1;
+  } // eq(TextBlock, TextBlock)
+
+  /**
+   * Returns true if both blocks have the same structure.
+   */
+  public static Boolean eqv(TextBlock block_0, TextBlock block_1) {
+    return block_0.eqv(block_1);
   } // eq(TextBlock, TextBlock)
 
   /**
