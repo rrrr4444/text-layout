@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * @author Reed Colloton
  */
-public class TestBlockTests {
+public class TextBlockTests {
   /**
    * Tests for the Centered class.
    */
